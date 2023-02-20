@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --grayish-cyan-400: hsl(186, 14%, 43%);
+  --grayish-cyan-500: hsl(184, 14%, 56%);
+  --grayish-cyan-800: hsl(185, 41%, 84%);
+  --grayish-cyan-900: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(19, 100%, 52%);
+  font-size: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: var(--grayish-cyan-800);
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 145px;
+}
+.logo img {
+  display: block;
+  margin-top: 0.8rem;
+}
+
+.container {
+  width: 100%;
+  background-color: var(--white);
+  padding: 3.1rem 2.4rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.input {
+  padding-inline: 0.7rem;
+  width: 100%;
+}
+
+.input .bill-amount {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.2rem;
+}
+
+.input .bill-amount label {
+  font-size: 1.6rem;
+  color: var(--grayish-cyan-400);
+  margin-bottom: 0.6rem;
+}
+
+.input .input-div {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.input .bill-amount #bill {
+  width: 100%;
+  border-radius: 0.5rem;
+  text-align: right;
+  border: 2px solid var(--grayish-cyan-900);
+  outline: none;
+  background-color: var(--grayish-cyan-900);
+  color: var(--very-dark-cyan);
+  font-size: 2.4rem;
+  padding: 0.5rem 1.8rem 0.4rem;
+}
+
+.input .bill-amount #bill:focus {
+  border: 2px solid var(--grayish-cyan-500);
+}
+
+.input .bill-amount .dollar {
+  position: absolute;
+  top: 1.7rem;
+  left: 1.9rem;
+}
+.input .tips {
+  margin-bottom: 3.2rem;
+}
+
+.input .tips p {
+  font-size: 1.6rem;
+  color: var(--grayish-cyan-400);
+  margin-bottom: 1.7rem;
+}
+
+.input .tips .tips-percentage {
+  display: grid;
+  align-items: stretch;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 2.4rem;
+  gap: 1.7rem;
+}
+
+.input .tips .tips-percentage .tip {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  transition: 0.2s ease-in-out;
+}
+
+.input .tips .tips-percentage .tip:hover {
+  background-color: var(--grayish-cyan-800);
+  color: var(--very-dark-cyan);
+}
+
+.input .tips .tips-percentage .tip.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.input .tips .tips-percentage .custom {
+  background-color: var(--grayish-cyan-900);
+  padding: 0;
+}
+
+.input .tips .tips-percentage .custom input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  font-size: 2.4rem;
+  text-align: right;
+  padding: 0 2rem;
+  border: none;
+  outline: none;
+}
+
+.input .people {
+  position: relative;
+  margin-bottom: 3.2rem;
+}
+
+.input .people label {
+  font-size: 1.6rem;
+  color: var(--grayish-cyan-400);
+  margin-bottom: 0.6rem;
+}
+
+.input .people p {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  color: var(--error);
+  font-size: 1.6rem;
+  transition: 0.3s ease-in-out;
+}
+
+.input .people.error p {
+  opacity: 1;
+}
+
+.input .people #people-input {
+  width: 100%;
+  text-align: right;
+  border: 2px solid var(--grayish-cyan-900);
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: var(--grayish-cyan-900);
+  color: var(--very-dark-cyan);
+  font-size: 2.4rem;
+  padding: 0.3rem 1.8rem 0.4rem;
+}
+
+.input .people #people-input:focus {
+  border: 2px solid var(--grayish-cyan-500);
+}
+
+.input .people.error #people-input:focus {
+  border-color: var(--error);
+}
+
+.input .people .people-div {
+  margin-top: 0.6rem;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.input .people .person {
+  position: absolute;
+  top: 1.7rem;
+  left: 1.9rem;
+}
+
+.output {
+  background-color: var(--very-dark-cyan);
+  border-radius: 1.5rem;
+  padding: 2.4rem 2rem 2.4rem 2.4rem;
+}
+
+.output .counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.output .counter .tip p {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.output .counter .tip p span {
+  font-size: 1.3rem;
+  color: var(--grayish-cyan-400);
+}
+
+.output .counter .price {
+  font-size: 1.6rem;
+  color: var(--grayish-cyan-500);
+}
+
+.output button.reset.disabled {
+  background-color: var(--grayish-cyan-500);
+  color: var(--grayish-cyan-400);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.output button.reset {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.9rem;
+  margin-top: 1.3rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.output button.reset:hover {
+  background-color: var(--grayish-cyan-800);
+}
+
+@media (min-width: 768px) {
+  .container {
+    border-radius: 2rem;
+    width: calc(100% - 4rem);
+  }
+
+  .input .tips .tips-percentage {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    height: 305px;
+  }
+
+  .logo img {
+    padding-top: 6.6rem;
+  }
+  .container {
+    max-width: 920px;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 3.2rem;
+    border-radius: 2.5rem;
+  }
+
+  .container .input {
+    width: 50%;
+    padding: 1.2rem 1.8rem;
+  }
+
+  .container .output {
+    width: 50%;
+  }
+
+  .input .bill-amount {
+    margin-bottom: 3.9rem;
+  }
+
+  .input .tips {
+    margin-bottom: 4rem;
+  }
+
+  .input .tips .tips-percentage .custom input {
+    padding: 0 1.2rem;
+  }
+
+  .input .people {
+    margin-bottom: 0.5rem;
+  }
+
+  .output {
+    padding: 4rem;
+  }
+
+  .output .counter {
+    margin-top: 0rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .output .counter .price {
+    font-size: 2.5rem;
+  }
+
+  .output button.reset {
+    margin-top: 9.7rem;
+  }
+}
